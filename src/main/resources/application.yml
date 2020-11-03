@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: authorizationserver
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/USERSERVICE?autorecconect=true"
+    password: "root"
+    username: "root"
+config:
+  oauth2:
+    clientId: nistruct
+    clientSecret: nistruct@mk2019!
+    privateKey: -----BEGIN RSA PRIVATE KEY-----
+      MIIEpAIBAAKCAQEAyZcyVVYkFatvAL4233m79pKGJNp3a4reCEu0E5ViAbWLMPYF
+      l2Y2iiga8WYYn7j8geh6miSIp5vhD0XTj9JtivT8Qc8+BFB6rCQccYA/CxNO28q4
+      83FyT3XhcK4qmcyawvL9rvgWiXAn91LAVowb+HdwxaPYSht58VXbGzXLQZNcmVnr
+      5haThJn2f/BfjUphpk1TyxWijFg7w68hqRW2himTkqjJFDHpz9QLvAmzv79up02b
+      +vql0N5HxAnHpFclAAZUmLlIuIfcNN2gF86f/cYM7utJOnNfWzylf2vTbEA+WI4f
+      85/oWB2Fht7Zq0QIWfrHfhcGfRmqTBQnIyudgQIDAQABAoIBAQCa3plAjgjyzN1e
+      SMOHM9J/P1nm/h84c1rYLLCPSvgcMAha+OaaxV+pC96HDdRlAIyckKl/uglyGoLw
+      ZMh/eT3Gvyb8t+YBEoLrtGJVoBzOuWqf2EH2ZHVZLkqfcm4v8cwDcQILZXSK6asK
+      inxRARqL69arP5BufmVUTo0hflZEbUAA8ds6oYd7zth//DuliRtHJR8S93/IXn6J
+      UAKjh5mT/GsNpR194BIlKgB1V1q8VU0p/h9yVAnuANuQXcKS7s0FDRDI248Idqf4
+      0Pn2XmJJkHW3DhyO8qnXm3WvbMyRCWvy3r0IOCSowmtnAOFfHlCyNK5h0VEJZA1P
+      NLU+RamxAoGBAO6n44thHP5WNcGjISzTEixq2Ugs+d0eqWBV6wO5pdEkiPR78HQj
+      adwwjQYft7KzadZuRhFezTFnfFnjmqWTUwFD+X8W1O13I9n4w09pzueua/ftgVpW
+      5OiZQ9foLyDKq/4sNmsUK7e8Quu5VAUcd85mmLMeNhTAzZnGUetoLfmHAoGBANg9
+      uNzOIOLeBbucVTCQA3IlBJmJ8KPE3MQ+cic7eJ2WuJCOfgafUWtBDHWTvQuA9G4l
+      aA91X9oiWLU6V/kUuypdm66R4FR7jM4w/kEakFKt1JBXHvKA9a1vrQkq8U2fAaA1
+      ua1kxDJk3QpjqK9reLKDrWkCq0wbFs4FAZCg11K3AoGBAKRbfzun/92w5YibnedO
+      3X81frpULyf3S9KKmTWRjv6/2In3KRvyn58C2LxU75/kK4l/nEWuMkZJ7LvDIefR
+      1CJU++hogu+fU1N0HJ3+Un4AA19Vc/YRTchadPymbH561YRQUpHf7FO3FaddlN2I
+      Q4Ij6hnBPqGAPpgemqAyuSbVAoGAKNrQeHdBY1uLPbz1o20yGXjA+7lCC87/3tvl
+      eWAVE8EMMdOaH+ot2dO6ZOR6zReaFs1ecb09VNs0Y1kYkejGy+RPq5XICm4lVjeP
+      cgFwzw4koPi00iBnSlNVH+xLFt0502kTIZ1uLA8+a94UWsA1V5TlSHfGoWRk1JvB
+      he+9ftUCgYAs/1wpwD+nzXl0LZwythE+C/nxtTBkZ9su6b/DX1gCU/PMKDZDisx/
+      MlAMNdqGBZGY/MzPHblEAJhAYzgY4Jl+cKnWz9e/PqKvy3+tRp/rSGiEpW5NLcAW
+      bW1N0F0twxpGA4hSugqdc4BQ5i3hBBlv5pbmiTN52347Bq24Oh6+XQ==
+      -----END RSA PRIVATE KEY-----
+    publicKey: -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyZcyVVYkFatvAL4233m7
+      9pKGJNp3a4reCEu0E5ViAbWLMPYFl2Y2iiga8WYYn7j8geh6miSIp5vhD0XTj9Jt
+      ivT8Qc8+BFB6rCQccYA/CxNO28q483FyT3XhcK4qmcyawvL9rvgWiXAn91LAVowb
+      +HdwxaPYSht58VXbGzXLQZNcmVnr5haThJn2f/BfjUphpk1TyxWijFg7w68hqRW2
+      himTkqjJFDHpz9QLvAmzv79up02b+vql0N5HxAnHpFclAAZUmLlIuIfcNN2gF86f
+      /cYM7utJOnNfWzylf2vTbEA+WI4f85/oWB2Fht7Zq0QIWfrHfhcGfRmqTBQnIyud
+      gQIDAQAB
+      -----END PUBLIC KEY-----
+server:
+  port: 9090
