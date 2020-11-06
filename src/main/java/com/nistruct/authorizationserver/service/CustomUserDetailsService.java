@@ -5,12 +5,11 @@ import com.nistruct.authorizationserver.model.CustomUser;
 import com.nistruct.authorizationserver.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements UserService {
 
     @Autowired
     OAuthDAOService oAuthDAOService;
@@ -30,4 +29,5 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return null;
     }
+
 }

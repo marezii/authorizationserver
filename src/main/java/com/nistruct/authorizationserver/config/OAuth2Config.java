@@ -14,6 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 @Configuration
 public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
@@ -24,6 +25,12 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Value("${config.oauth2.clientSecret}")
     private String clientSecret;
 
+    @Value("${config.oauth2.privateKey}")
+    private String privateKey;
+
+    @Value("${config.oauth2.publicKey}")
+    private String publicKey;
+
     private final PasswordEncoder passwordEncoder;
 
     @Qualifier("authenticationManagerBean")
@@ -31,8 +38,8 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
 
-
     private final TokenStore tokenStore;
+
 
     public OAuth2Config(PasswordEncoder passwordEncoder,
                         AuthenticationManager authenticationManager,
@@ -64,6 +71,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         endpoints
                 .tokenStore(tokenStore)
                 .reuseRefreshTokens(false)
+                .accessTokenConverter(tokenEnhancer())
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsService);
     }
@@ -74,9 +82,15 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         DefaultTokenServices tokenServices = new DefaultTokenServices();
         tokenServices.setSupportRefreshToken(true);
         tokenServices.setTokenStore(tokenStore);
-        tokenServices.setAccessTokenValiditySeconds(30 * 60);
-        tokenServices.setRefreshTokenValiditySeconds(7 * 24 * 60 * 60);
         return tokenServices;
+    }
+
+    @Bean
+    public JwtAccessTokenConverter tokenEnhancer() {
+        JwtAccessTokenConverter converter = new CustomTokenEnhancer();
+        converter.setSigningKey(privateKey);
+        converter.setVerifierKey(publicKey);
+        return converter;
     }
 
 }

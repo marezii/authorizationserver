@@ -17,6 +17,7 @@ public class OAuthDAOServiceImpl implements OAuthDAOService {
 
     private final JdbcTemplate jdbcTemplate;
 
+
     public OAuthDAOServiceImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
@@ -74,4 +75,5 @@ public class OAuthDAOServiceImpl implements OAuthDAOService {
 
         return null;
     }
+
 }
