@@ -88,8 +88,6 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Bean
     public JwtAccessTokenConverter tokenEnhancer() {
         JwtAccessTokenConverter converter = new CustomTokenEnhancer();
-        converter.setSigningKey(privateKey);
-        converter.setVerifierKey(publicKey);
         return converter;
     }
 

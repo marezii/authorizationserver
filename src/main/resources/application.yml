@@ -6,6 +6,10 @@ spring:
     url: "jdbc:mysql://localhost:3306/USERSERVICE?autorecconect=true"
     password: "root"
     username: "root"
+  cache: redis
+  redis:
+    host: localhost
+    port: 6380
 config:
   oauth2:
     clientId: nistruct
