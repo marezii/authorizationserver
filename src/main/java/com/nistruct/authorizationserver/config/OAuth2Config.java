@@ -25,12 +25,6 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Value("${config.oauth2.clientSecret}")
     private String clientSecret;
 
-    @Value("${config.oauth2.privateKey}")
-    private String privateKey;
-
-    @Value("${config.oauth2.publicKey}")
-    private String publicKey;
-
     private final PasswordEncoder passwordEncoder;
 
     @Qualifier("authenticationManagerBean")

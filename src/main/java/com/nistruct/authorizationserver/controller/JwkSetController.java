@@ -27,7 +27,7 @@ public class JwkSetController {
         log.debug("Retrieving available JWK...");
         Map<String, Object> response = new HashMap<>();
 
-        response.put("keys", jwkService.findAllKeys());
+        response.put("keys", jwkService.getJwks());
 
         log.debug("public Keys successfully retrieved...");
 
